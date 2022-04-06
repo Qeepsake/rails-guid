@@ -11,9 +11,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "src"
-  ],
+  "include": [ "src", "tests/extract-rails-id.test.js", "tests/create-rails-id.test.js"  ],
   "exclude": [
     "node_modules"
   ],

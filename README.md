@@ -1,45 +1,40 @@
-# use-redux-effect
+# Rails Guid for JavaScript
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-> A powerful React hook that subscribes to Redux store events
+> Zero dependancy utility for creating and extracting rails GUIDs from a string.
 
-[![NPM](https://img.shields.io/npm/v/use-redux-effect.svg)](https://www.npmjs.com/package/use-redux-effect) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@qeepsake/rails-guid.svg)](https://www.npmjs.com/package/@qeepsake/rails-guid) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save use-redux-effect
+npm install --save @qeepsake/rails-guid
 ```
 
 ## Usage
-First, add the hook and set it up to execute the desired logic
-```jsx
-import {Text} from 'react-native'
-import { useReduxEffect } from 'use-redux-effect'
 
-const ExampleClass = (props) => {
+### Extracting Rails GUID
 
-    useReduxEffect((exampleEffect) => {
-      // Execute code
-    }, eventType, [props]);
+You can use `extractRailsId` to extract a Rails GUID from a string:
 
+```js
+import { extractRailsId } from '@qeepsake/rails-guid';
 
-    return <Text>This is an example Component</Text>
-
-}
+const guid = "gid://qeepsake-rails/Model/55587";
+extractRailsId(guid) // -> 55587
 ```
-Next, add the reducer that recieves the action to your Redux store :
 
-```jsx
-import {actionReducer} from 'use-redux-effect'
+### Creating Rails GUID
 
-const reducers = {
-  action : actionReducer
-}
+You can use the `createRailsId` to create Rails GUID:
 
-// Proceed to add into the Redux store of your application
+```js
+import { createRailsId } from '@qeepsake/rails-guid';
+
+const id = 55587 || "55587";
+createRailsId(id, "Model") // -> gid://qeepsake-rails/Model/55587
 ```
 
 ## License
@@ -55,8 +50,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://www.lukebrandonfarrell.com"><img src="https://avatars3.githubusercontent.com/u/18139277?v=4" width="100px;" alt=""/><br /><sub><b>Luke Brandon Farrell</b></sub></a><br /><a href="#projectManagement-lukebrandonfarrell" title="Project Management">📆</a> <a href="https://github.com/aspect-apps/use-redux-effect/commits?author=lukebrandonfarrell" title="Code">💻</a></td>
-    <td align="center"><a href="https://jramogh.co"><img src="https://avatars3.githubusercontent.com/u/31567169?v=4" width="100px;" alt=""/><br /><sub><b>Amogh Jahagirdar</b></sub></a><br /><a href="https://github.com/aspect-apps/use-redux-effect/commits?author=amogh-jrules" title="Code">💻</a> <a href="https://github.com/aspect-apps/use-redux-effect/commits?author=amogh-jrules" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://www.lukebrandonfarrell.com"><img src="https://avatars3.githubusercontent.com/u/18139277?v=4" width="100px;" alt=""/><br /><sub><b>Luke Brandon Farrell</b></sub></a><br /><a href="#projectManagement-lukebrandonfarrell" title="Project Management">📆</a> <a href="https://github.com/qeepsake/rails-guid/commits?author=lukebrandonfarrell" title="Code">💻</a></td>
   </tr>
 </table>
 
