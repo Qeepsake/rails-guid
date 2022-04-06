@@ -4,6 +4,9 @@
   "description": "Tiny (zero dependancy) utility to create and extract rails guid strings in JavaScript 🛤",
   "author": "lukebrandonfarrell",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qeepsake/rails-guid.git"
