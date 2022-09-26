@@ -1,3 +1,5 @@
+import { isExtractedRailsId } from './is-extracted-rails-id'
+
 /**
  * Extract rails ID
  *
@@ -18,6 +20,9 @@ export function extractRailsId(
   gid?: string | null,
   stripTimestamp = false,
 ): string | null {
+  // Checks if ID has already been extracted, if so, return it
+  if (gid && isExtractedRailsId(gid)) return gid
+
   if (typeof gid === 'string' && gid?.indexOf('/') != -1) {
     const gidComponents = gid.split('/')
     let extractedId = gidComponents[gidComponents.length - 1]

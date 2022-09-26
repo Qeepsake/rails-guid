@@ -37,6 +37,15 @@ const id = 55587 || "55587";
 createRailsId(id, "Model") // -> gid://qeepsake-rails/Model/55587
 ```
 
+### Tetsing for Extracted Rails ID
+
+```js
+import { isExtractedRailsId } from '@qeepsake/rails-guid';
+
+isExtractedRailsId("55587") // => true
+isExtractedRailsId("gid://qeepsake-rails/Model/55587") // => false
+```
+
 ## License
 
 MIT © [lukebrandonfarrell](https://github.com/lukebrandonfarrell)
