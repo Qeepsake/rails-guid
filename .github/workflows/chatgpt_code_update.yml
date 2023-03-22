@@ -1,0 +1,25 @@
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  chatgpt_code_update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.comment.issue.pull_request.head.ref }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+    - name: Install dependencies
+      run: npm ci
+    - name: Run ChatGPT Code Update Script
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: node chatgpt_code_update.js
