@@ -1,6 +1,5 @@
-
 on:
-  issue_comment:
+  pull_request_review_comment:
     types: [created]
 
 jobs:
@@ -22,4 +21,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: node chatgpt_code_update.js
+      run: node ./scripts/chatgpt_code_update.js
