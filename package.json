@@ -1,6 +1,6 @@
 {
   "name": "@qeepsake/rails-guid",
-  "version": "1.0.0",
+  "version": "1.4.0",
   "description": "Tiny (zero dependancy) utility to create and extract rails guid strings in JavaScript 🛤",
   "author": "lukebrandonfarrell",
   "license": "MIT",
