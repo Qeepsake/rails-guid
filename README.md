@@ -46,6 +46,20 @@ isExtractedRailsId("55587") // => true
 isExtractedRailsId("gid://qeepsake-rails/Model/55587") // => false
 ```
 
+### Testing for Rails Global ID
+
+You can use `isRailsId`` to test if a string is a valid Rails Global ID:
+
+```js
+import { isRailsId } from '@qeepsake/rails-guid';
+
+isRailsId("gid://qeepsake-rails/User/1")  // => true
+isRailsId("gid://someotherapp/User/1")   // => true
+isRailsId("User/1")                      // => false
+```
+
+This function tests if the string conforms to the general Rails gid structure: `gid://<ANY_APP_NAME>/<MODEL_NAME>/<ID>`.
+
 ## License
 
 MIT © [lukebrandonfarrell](https://github.com/lukebrandonfarrell)
